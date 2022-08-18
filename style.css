@@ -1,0 +1,182 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root {
+    --Violet: hsl(257, 40%, 49%);
+    --SoftMagenta: hsl(300, 69%, 71%);
+}
+.attribution {
+    bottom: 0;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    width: 100%;font-size: 11px; 
+    text-align: center;
+}
+.attribution a { color: white; }
+button {
+    cursor: pointer;
+    border: none;
+}
+.huddle__bg {
+    width: 100%;
+    position: fixed;
+    z-index: -1;
+    background: var(--Violet) url("./images/bg-desktop.svg") top center / cover no-repeat;
+    height: 100%;
+}
+.huddle {
+    display: flex;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    justify-content: center;
+    align-items: center;
+}
+.huddle__container {
+    display: flex;
+    padding: 48px 48px 32px;
+    height: 100%;
+}
+.huddle__item {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.huddle__logo {
+    width: 160px;
+}
+.huddle__img {
+    width: 600px;
+    margin-top: 10%;
+}
+.huddle__content {
+    padding: 144px 48px 0px;
+    position: relative;
+    height: 100%;
+}
+.huddle__title {
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-size: 32px;
+    
+}
+.huddle__description {
+    margin-top: 32px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    color: white;
+}
+.huddle__btn {
+    color: var(--Violet);
+    background-color: white;
+    font-size: 16px;
+    padding: 14px 56px;
+    border-radius: 30px;
+    box-shadow: 0 3px 14px rgb(0 0 0 / 50%);
+    margin-top: 5%;
+}
+.huddle__socials {
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    right: 10%;
+    justify-content: space-around;
+    width: 25%;
+}
+.huddle__socials__item {
+    color: white;
+    border: 1px solid white;
+    border-radius: 50%;
+    display: flex;
+    width: 32px;
+    height: 32px;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+}
+/* .huddle__socials__item::before {
+    content: "";
+    border: 1px solid white;
+    padding: 16px;
+} */
+.huddle__socials__item:hover,
+.huddle__socials__item:active {
+    color: var(--SoftMagenta);
+    border-color: var(--SoftMagenta);
+}
+
+.huddle__btn:hover,
+.huddle__btn:active {
+    color: white;
+    background-color: var(--SoftMagenta);
+    transition: .3s;
+}
+.huddle__btn:hover {
+    transform: translateY(-3px);
+}
+.huddle__btn:active {
+    transform: translateY(0);
+}
+/* Tablet */
+@media (max-width: 1023px)  {
+    .huddle {
+        position: initial;
+    }
+    .huddle__container {
+        flex-direction: column;
+    }
+    .huddle__img {
+        width: 100%;
+    }
+    .huddle__content {
+        margin-top: 32px;
+        padding: 0;
+        text-align: center;
+    }
+    .huddle__title {
+        text-shadow: 0 4px 10px rgba(0,0,0,.3);
+    }
+    .huddle__socials {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .huddle__btn:hover,
+    .huddle__btn:active {
+        transform: none;
+    }
+}
+
+/* Tablet */
+@media (min-width: 740px) and (max-width: 1023px) {
+    .huddle {
+        position: fixed;
+    }
+}
+/* Mobile */
+@media (max-width: 739px) {
+    .huddle__logo {
+        width: 140px;
+    }
+    .huddle__title {
+        font-size: 25px;
+    }
+    .huddle__btn {
+        margin-top: 10%;
+        padding: 14px 80px;
+    }
+    .huddle__socials {
+        position: relative;
+        width: 50%;
+        margin-top: 20%;
+    }
+    .attribution {
+        position: initial;
+    }
+}
